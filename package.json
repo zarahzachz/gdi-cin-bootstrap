@@ -1,23 +1,21 @@
 {
-  "name": "reveal.js",
-  "version": "3.5.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://lab.hakim.se/reveal-js",
-  "subdomain": "revealjs",
-  "main": "js/reveal.js",
+  "name": "gdi cincinnati bootstrap workshop",
+  "version": "1.0.0",
+  "description": "GDI Cincinnati's Bootstrap Workshop",
+  "homepage": "http://bootstrap.gdicincy.com",
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve",
     "build": "grunt"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
+    "name": "Sarah Sachs",
+    "email": "sarah.sachs@gmail.com",
+    "web": "https://zarahzachz.github.io"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "git://github.com/zarahzachz/gdi-cin-bootstrap.git"
   },
   "engines": {
     "node": ">=4.0.0"
