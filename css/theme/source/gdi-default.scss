@@ -1,0 +1,124 @@
+/**
+ * Default GDI theme for reveal.js
+ */
+
+ // Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic,700italic);
+
+// Colors used in the theme
+$pale-yellow: #fcf3e0;
+$gdi-pink: #f05b62;
+$gmd-green: #8bc34a;
+$gmd-pink-20: #ffab91;
+$codeBackground: desaturate(darken($pale-yellow, 20), 60);
+
+$backgroundColor: $pale-yellow;
+
+// Main text
+$mainFont: Ubuntu, 'sans-serif';
+$mainColor: #373737;
+
+// Headings
+$headingFont: Ubuntu, 'sans-serif';
+$headingColor: $gdi-pink;
+$headingTextShadow: none;
+
+$heading1Size: 3em;
+$heading2Size: 2em;
+$heading3Size: 1.5em;
+$heading4Size: 1.00em;
+
+// Links
+$linkColor: $gmd-green;
+$linkColorHover: $gmd-pink-20;
+
+// Text selection
+$selectionBackgroundColor: $gdi-pink;
+$selectionColor: #fff;
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground() {
+	background: $backgroundColor;
+  background: -moz-radial-gradient(center, circle cover, #f7fbfc 0%, #fcf3e0 100%);
+  background: -webkit-gradient(radial, center center, 0, center center, 100%, color-stop(0%, #f7fbfc), color-stop(100%, #fcf3e0));
+  background: -webkit-radial-gradient(center, circle cover, #f7fbfc 0%, #fcf3e0 100%);
+  background: -o-radial-gradient(center, circle cover, #f7fbfc 0%, #fcf3e0 100%);
+  background: -ms-radial-gradient(center, circle cover, #f7fbfc 0%, #fcf3e0 100%);
+  background: radial-gradient(center, circle cover, #f7fbfc 0%, #fcf3e0 100%);
+  background-color: #f7fbfc;
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+// some overrides after theme template import
+
+.reveal p {
+  font-weight: 300;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-weight: 700;
+}
+
+.reveal .text-center {
+  text-align: center;
+}
+
+.reveal .attribution {
+  text-align: right;
+}
+
+.reveal p code {
+  background-color: $codeBackground;
+  display: inline-block;
+  border-radius: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.reveal small code {
+  vertical-align: baseline;
+}
+
+.reveal blockquote {
+  width: initial;
+  padding: 0 20px;
+}
+
+.reveal section {
+  text-align: left;
+}
+
+footer {
+  background-image: url(../../assets/pink-logo.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  bottom: 3px;
+  left: 0;
+  z-index: 10;
+  text-align: right;
+}
+
+.reveal .copyright {
+  font-size: 18px;
+  padding-right: 20px;
+}
