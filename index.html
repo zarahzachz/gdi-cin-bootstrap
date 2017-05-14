@@ -23,10 +23,10 @@
 	</head>
 	<body>
 		<div class="reveal">
-			<div class="slides contrast-bg">
+			<div class="slides">
 				<!-- Introduction -->
 
-				<section data-markdown>
+				<section class="text-center" data-markdown>
 					<textarea data-template>
 						# Bootstrap Workshop
 						Sarah Sachs
@@ -36,8 +36,6 @@
 						Github: [gdi-cin-bootstrap](https://github.com/zarahzachz/gdi-cin-bootstrap)
 					</textarea>
 				</section>
-			</div>
-			<div class="slides">
 
 				<section data-markdown>
 					<textarea data-template>
@@ -53,6 +51,8 @@
 					</textarea>
 				</section>
 
+				<section data-background="assets/gdi-rules.gif"></section>
+
 				<section data-markdown>
 					<textarea data-template>
 						## Welcome
@@ -60,22 +60,34 @@
 						Tell us about yourself.
 						- Who are you?
 						- What do you hope to get out of the class?
-						- Who's you're favorite superhero?
-
-						Note:
-						Who here has heard of Bootstrap? And who's played around with it?
+						- Who's your favorite superhero?
 					</textarea>
 				</section>
 
 				<!-- What is Bootstrap? -->
 
+				<section data-background="assets/start.gif"></section>
+
 				<section data-markdown>
 					<textarea data-template>
-						## What is Bootstrap?
+						## What we'll be covering today
+						1. Basic setup
+						2. Using the grid
+						3. Creating custom components
+						4. Working with pre-made components
+						5. Adding custom CSS
 
-						> Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
+						⏰ *If we have time* - we'll play with some JavaScript plugins
+					</textarea>
+				</section>
 
-						-- Bootstrap
+				<section data-markdown>
+					<textarea data-template>
+						## What we won't be covering today
+						1. Bootstrap theming
+						2. How to use every single Bootstrap feature
+						3. Overriding Bootstrap's CSS
+						4. How to use any CSS preprocessor
 					</textarea>
 				</section>
 
@@ -84,6 +96,8 @@
 						## What is Bootstrap?
 
 						> Bootstrap is the most popular **HTML, CSS, and JS framework** for developing **responsive**, **mobile first** projects on the web.
+
+						<p class="attribution">-- Bootstrap</p>
 					</textarea>
 				</section>
 
@@ -104,7 +118,7 @@
 
 						<dl>
 							<dt>Responsive</dt>
-							<dd>A design approach to web design allowing a single webpage to be viewed in response to the size of the screen/web browser one is viewing with.</dd>
+							<dd>A design approach, specifically for the Web, allowing a single webpage to be viewed in response to the size of the screen/web browser it's being view with.</dd>
 						</dl>
 					</textarea>
 				</section>
@@ -120,14 +134,28 @@
 					</textarea>
 				</section>
 
+				<section data-background="assets/fed-dance.gif"></section>
+
 				<!-- Why is Bootstrap such a big deal? -->
 
 				<section data-markdown>
 					<textarea data-template>
 						## Why Bootstrap?
-						- It looks pretty slick
+						- It was created by Twitter devs (smart people!)
+						- It [looks pretty slick](http://builtwithbootstrap.com/)
+						- It's [battle-tested](http://getbootstrap.com/browser-bugs/)
 						- It's *really* popular
-						- It's battle-tested
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## Why Bootstrap?
+						Bootstrap is one of the most popular front-end frameworks, with 110,000+ stars and 50,000+ forks on Github.
+
+						<img src="assets/popular.png" alt="Bootstrap has 110,000+ stars and 50,000+ forks on Github.">
+
+						It's an open source project on Github, meaning it's free to use and anyone can contribute to it.
 					</textarea>
 				</section>
 
@@ -137,7 +165,7 @@
 					<textarea data-template>
 						## Let's get started
 
-						To get started, visit [getbootstrap.com](http://getbootstrap.com/getting-started/)
+						To get started, visit [getbootstrap.com/get-started](http://getbootstrap.com/getting-started/)
 					</textarea>
 				</section>
 
@@ -146,11 +174,20 @@
 				<section data-markdown>
 					<textarea data-template>
 						## Setting up Bootstrap
-						There are a few ways to add Bootstrap to your website.
 
-						Adding Bootstrap using the [Bootstrap CDN](http://getbootstrap.com/getting-started/#download-cdn) approach is widely used in a lot of workplaces.
+						There are a few ways you can go about adding Bootstrap to your project.
 
-						But for this class, we'll be using the [Bootstrap Download](http://getbootstrap.com/getting-started/#download). This method will allow you to see the nuts and bolts that make up the framework, building on your understanding with this tool.
+						For this class, we'll be [downloading](http://getbootstrap.com/getting-started/#download) it. This method allows you to see the nuts and bolts that make up the framework, giving you a better understanding of what Bootstrap has to offer.
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## 🛠 Let's develop it!
+
+						Download Bootstrap to the directory of your choice.
+
+						🚨 *Hint: The work we do in today's workshop will be done in this directory - so remember where you put it!*
 					</textarea>
 				</section>
 
@@ -158,15 +195,20 @@
 
 				<section data-markdown>
 					<textarea data-template>
-						## What's included in Bootstrap
+						## What's included?
 
-						[Add image of file tree]
+						<div style="float: left;">
+							<img src="assets/bootstrap-directory.png" alt="bootstrap directory structure">
+						</div>
 
-						One thing to note is your CSS directory includes two CSS files: `bootstrap.css` and `bootstrap-theme.css`
+						<div style="float: right; width: 60%;">
+							<p class="fragment">Note that the <code>css/</code> folder includes two similarly-named files:</p>
 
-						`bootstrap.css` includes the basics like layout styles, media queries for the grid, etc.
+							<p class="fragment"><code>bootstrap.css</code> includes the basics like layout styles, media queries for the grid, etc.</p>
 
-						`bootstrap-theme.css` includes more stylistic styles, i.e., font-faces, colors, etc.
+							<p class="fragment"><code>bootstrap-theme.css</code> includes more stylistic styles, i.e., font-faces, colors, etc.</p>
+						</div>
+
 					</textarea>
 				</section>
 
@@ -175,29 +217,72 @@
 				<section data-markdown>
 					<textarea data-template>
 						## HTML template
-						Click [here](http://getbootstrap.com/getting-started/#template) for Bootstrap's HTML template.
 
-						`<meta name="viewport" content="width=device-width, initial-scale=1">` is used to make your website responsive
+						Bootstrap provides us with a basic template to set up a project quickly and correctly.
 
-						`<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>` Jquery is required for Boostrap's Javascript components to work. *Must be loaded **before** Bootrap's JS file.*
+						Click [here](http://getbootstrap.com/getting-started/#template) to see/use this template.
 					</textarea>
 				</section>
 
 				<section data-markdown>
 					<textarea data-template>
-						## Let's develop it!
+						## The Responsive Meta Tag
 
-						[Add exercise]
+						This template has a few new additions you *might* not be familiar with.
+
+						This meta tag lives in the `<head>` and will make your site responsive.
+						```
+						<meta name="viewport" content="width=device-width, initial-scale=1">
+						```
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## Using Javascript
+
+						And if you want to use any of Bootstrap's JavaScript components, you **have** to have Jquery installed *before* any other JS library.
+
+						This template is using a CDN to load Jquery for us.
+						```
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+						```
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## 🛠 Let's develop it!
+
+						In your project folder, create a new HTML file and wire it up to use Bootstrap.
+
+						🚨 Hint: Be sure the *minified* CSS and JavaScript are in the right spots!
 					</textarea>
 				</section>
 
 				<!-- Layout -->
 
+				<section data-background="assets/grid-ness.gif"></section>
+
 				<section data-markdown>
 					<textarea data-template>
-						## Layout
+						## The Grid
 
-						`.container` vs. `.container-fluid`
+						Bootstrap uses a combination of containers, rows, and columns to achieve its grid layout.
+
+						This grid layout is probably *the* most important feature of this framework.
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## .container vs. .container-fluid
+
+						`.container` is a fixed-width container
+
+						`.container-fluid` is a full-width container
+
+						Containers are used to "contain" the contents of your site. They ensure your content is properly aligned (centered) and add padding to it. You can have several of these classes on the same page, but **never** on the same element.
 
 						[Example](http://codepen.io/zarahzachz/full/zwpxya/)
 					</textarea>
@@ -205,11 +290,11 @@
 
 				<section data-markdown>
 					<textarea data-template>
-						## Layout
+						## Rows
 
-						What does `.row` do?
+						Rows create horizontal groups of columns. If you're planning on using columns, they **must** be nested within a `.row` element.
 
-						It should only be used if you're working with columns.
+						On their own, `.row`s have a negative margin of about 15px. This is to account for the gutter surrounding the column elements.
 
 						[Example](http://codepen.io/zarahzachz/full/ZKroJO/)
 					</textarea>
@@ -217,37 +302,25 @@
 
 				<section data-markdown>
 					<textarea data-template>
-						## Layout
+						## Columns
 
-						And what are columns?
-
-						[image of Bootstrap grid]
-
-						Bootstrap uses a 12-column grid system. Why 12? Because it's a pretty flexible number. It's easily divible, allowing for a variety of layouts.
+						Bootstrap uses a 12-column grid system. Why 12? Because it's a pretty flexible number. It's easily divisible, allowing for a variety of layouts.
 					</textarea>
 				</section>
 
 				<section data-markdown>
 					<textarea data-template>
-						## Layout
+						## Columns
 
-						[image of different layout types]
+						<img src="assets/column-space.png" alt="Bootstrap's 12-col grid">
 					</textarea>
 				</section>
 
 				<section data-markdown>
 					<textarea data-template>
-						## Layout
+						## Columns
 
-						Bootstrap uses media queries to create its grid. [Open your CSS]
-					</textarea>
-				</section>
-
-				<section data-markdown>
-					<textarea data-template>
-						## Layout
-
-						Bootstrap uses this naming convention in naming their column classes:
+						Bootstrap uses this naming convention in naming its column classes:
 
 						| Device | Class | Container width |
 						| --- | --- | --- |
@@ -260,13 +333,9 @@
 
 				<section data-markdown>
 					<textarea data-template>
-						## Layout
-
-						[Link](http://codepen.io/zarahzachz/full/aWqGyw/)
+						## The Grid
 
 						Putting it all together:
-
-						Example:
 						```
 						<div class="container">
 							<div class="row">
@@ -275,18 +344,43 @@
 							</div>
 						</div>
 						```
+						[Example](http://codepen.io/zarahzachz/full/aWqGyw/)
 					</textarea>
 				</section>
 
 				<section data-markdown>
 					<textarea data-template>
-						## Layout Gotchas
+						## The Responsive Grid
 
-						Your rows should always add up to 12.
+						Unlike the container classes, Bootstrap's column classes can be stacked onto the same element. This allows you to create different layouts based on the width of the device!
+
+						```
+						<div class="container">
+							<div class="row">
+								<div class="col-xs-1 col-sm-6 col-md-2 col-lg-4">...</div>
+								<div class="col-xs-11 col-sm-6 col-md-10 col-lg-8">...</div>
+							</div>
+						</div>
+						```
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## The Responsive Grid
+
+						So how does Bootstrap accomplish this? Through the use of **media queries** and some pretty complex math in its CSS. You can open `bootstrap.css` [line 1615] and check them out for yourself.
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## 🚨 Layout Gotchas
+
+						Your rows should always add up to 12. If more than 12 columns are in a row, each group of extra columns will wrap onto a new line.
 
 						Bootstrap will assume columns are 12-columns wide unless indicated otherwise. (That whole **mobile-first development** thing.)
 
-						Example:
 						```
 						<div class="container">
 							<div class="row">
@@ -304,27 +398,31 @@
 
 				<section data-markdown>
 					<textarea data-template>
-						## Let's develop it!
+						## 🛠 Let's develop it!
 
-						Visit [CSS](http://getbootstrap.com/css/)
+						Using [CSS](http://getbootstrap.com/css/) helper classes, create a "feature card" section that responds to the browser's width.
 
-						Create a `<section>` containing 3 `<div>` elements. Each `<div>` should container a **circular** image, with a **header** centered beneath it.
+						1. Create a `<section>` containing 3 `<div>` elements.
+						2. In each `<div>`, add a **circular** image.
+						3. Place a **header** (centered) beneath that image.
+						4. Each `<div>` should be full-width on mobile screens, and move inline (i.e., 3 `<div>`s in 1 row) on tablet-sized screens.
 
-						Each `<div>` should be full-width on mobile screens, and move inline (i.e., 3 `<div>`s in 1 row) on tablet-sized screens.
-
-						Hint: Use Bootstrap's text-alignment helper class to help center your "feature cards".
+						🚨 Hint: Use Bootstrap's text-alignment helper class to help center your "feature cards".
 					</textarea>
 				</section>
 
 				<!-- Advanced layout -->
 
+				<section data-background="assets/grids-advanced.gif"></section>
+
 				<section data-markdown>
 					<textarea data-template>
-						## Advanced layout | Offsets
+						## Offsets
 
-						Column offsets allow you to adjust the margins of your columns. This is helpful when you want to position content **without** having 12 columns worth of content.
+						<p>Q: But what if you don't have 12-columns worth of content!?!</p>
 
-						Example:
+						<p class="fragment">A: Bootstrap has column offsets that allow you to adjust the margins of your columns!</p>
+
 						```
 						<div class="container">
 							<div class="row">
@@ -340,13 +438,12 @@
 
 				<section data-markdown>
 					<textarea data-template>
-						## Advanced layout | Offsets
+						## Offsets
 
 						Bootstrap provides an override class in the instance you want to remove an offset from a particular screensize.
 
 						This class is called `.col-*-offset-0`
 
-						Example:
 						```
 						<div class="container">
 							<div class="row">
@@ -364,9 +461,10 @@
 
 				<section data-markdown>
 					<textarea data-template>
-						## Let's develop it!
+						## 🛠 Let's develop it!
 
-						Under the closing `</section>` of the previous exercise, create a new `<section>` for the "About Me" part of your website. This section should include a **header** and short **paragraph** of text, centered horizontally.
+						1. Under the closing `</section>` of the previous exercise, create a new `<section>` for the "About Me" part of your website.
+						2. Include a **header** and short **paragraph** of text, centered horizontally.
 
 						This content may look a little lost, so we're going to add offsets to the desktop view to make it look nicer.
 					</textarea>
@@ -374,13 +472,12 @@
 
 				<section data-markdown>
 					<textarea data-template>
-						## Advanced layout | Nesting
+						## Nesting
 
-						You can have columns nested within columns! IT'S COLUMN-CEPTION!
+						Q: But what if your layout requires more granular control of its columns!?!
 
-						To nest your columns, you add a new `.row` inside your column of choice and from there, add the number of columns you want.
+						<p class="fragment">A: With nesting, your columns can get as precise as you need! To nest your columns, you add a new `.row` inside your column of choice and from there, add the number of columns you want.</p>
 
-						Example:
 						```
 						<div class="container">
 							<div class="row">
@@ -400,21 +497,26 @@
 
 				<section data-markdown>
 					<textarea data-template>
-						## Let's develop it!
+						## 🛠 Let's develop it!
 
 						Under the closing `</section>` of the previous exercise, we're going to add the basic markup for a contact form. (Note that there won't be any functionality to this.)
 
-						Create a new `<section>` and give it a centered **header**. Then add your **form** element. Your form should have a field for a first name, last name and email address. Under your form, add a **button**.
+						1. Create a new `<section>` and give it a centered **header**.
+						2. Add your **form** element. Your form should have a field for a first name, last name and email address.
+						3. Add a **submit button** under your form.
 					</textarea>
 				</section>
 
 				<section data-markdown>
 					<textarea data-template>
-						## Advanced layout | Reordering
+						## Reordering Columns
 
-						Bootstrap has classes onhand to help you reorder the position of your columns with a couple modifier classes.
+						Q: What if the order of your content makes sense on mobile screens, but looks wackadoo on desktop-sized screens!?!
 
-						Example:
+						<p class="fragment">A: Bootstrap has classes onhand to help you reorder the position of your columns with a couple modifier classes!</p>
+
+						<p class="fragment">The "push" class shifts your column right by the number of columns indicated. The "pull" class shifts it left by the number of columns indicated.</p>
+
 						```
 						<div class="container">
 							<div class="row">
@@ -423,17 +525,16 @@
 							</div>
 						</div>
 						```
-
-						Note:
-						The "push" class shifts your column right by the number of columns indicated. The "pull" class shifts it left by the number of columns indicated.
 					</textarea>
 				</section>
 
 				<section data-markdown>
 					<textarea data-template>
-						## Let's develop it!
+						## 🛠 Let's develop it!
 
-						[reorder feature cards exercise]
+						We're going to play around with reordering the feature cards we created for Exercise 2.
+
+						1. Using the column reordering helper classes, switch the positions of the first and last feature card **for large screens only**.
 					</textarea>
 				</section>
 
