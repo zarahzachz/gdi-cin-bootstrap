@@ -1,0 +1,29 @@
+/* Created in Exercise 9 */
+body {
+  padding-top: 50px;
+  position: relative;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.jumbotron {
+  background-image: url(http://lorempizza.com/1200/600);
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+
+.jumbotron .btn {
+  text-shadow: initial;
+}
+
+#about {
+  color: white;
+  background: #ef6c00;
+}
