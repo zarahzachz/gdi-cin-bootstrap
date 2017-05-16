@@ -2,7 +2,7 @@
 *.iml
 *.iws
 *.eml
-*.css
+exercises/**
 out/
 .DS_Store
 .svn
