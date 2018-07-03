@@ -1,29 +1,34 @@
-/* Created in Exercise 9 */
-body {
-  padding-top: 50px;
-  position: relative;
+.navbar.bg-light {
+  background-color: darkred !important;
 }
 
-section {
-  padding: 50px 0;
+.navbar.navbar-light .navbar-brand {
+  color: rgba(244,244,244,1) !important;
 }
 
-.navbar {
-  margin-bottom: 0;
+.navbar.navbar-light .navbar-toggler {
+  border-color: rgba(244,244,244,.7) !important;
 }
 
-.jumbotron {
-  background-image: url(http://lorempizza.com/1200/600);
+.navbar.navbar-light .navbar-nav .nav-link {
+  color: rgba(244,244,244,.7) !important;
+}
+
+.pizza-club .jumbotron {
+  background-image: url('http://lorempizza.com/800/400');
+  background-repeat: no-repeat;
   background-size: cover;
-  color: white;
-  text-shadow: 1px 1px 5px black;
 }
 
-.jumbotron .btn {
-  text-shadow: initial;
+footer {
+  background-color: darkgreen;
+  color: rgba(244,244,244,.7);
 }
 
-#about {
-  color: white;
-  background: #ef6c00;
+footer a {
+  color: rgba(244,244,244,.7);
+}
+
+footer a:hover {
+  color: rgba(244,244,244,.9);
 }
